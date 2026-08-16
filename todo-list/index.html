@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="مدیریت حرفه‌ای کارها با HTML، CSS و JavaScript">
+  <title>TaskFlow | مدیریت کارها</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">✓</div>
+        <div>
+          <h1>TaskFlow</h1>
+          <p>کارهایت را ساده‌تر مدیریت کن</p>
+        </div>
+      </div>
+      <button id="themeToggle" class="icon-btn" aria-label="تغییر حالت نمایش">☾</button>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">مدیریت هوشمند کارها</span>
+        <h2>امروز چه کاری را <span>تمام می‌کنی؟</span></h2>
+        <p>کارهایت را اضافه کن، مرتب نگه دار و پیشرفتت را ببین.</p>
+      </div>
+      <div class="progress-card">
+        <div class="progress-ring" id="progressRing">
+          <span id="progressPercent">0%</span>
+        </div>
+        <div>
+          <strong id="progressText">شروع کن!</strong>
+          <small>پیشرفت امروز</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><span>همه</span><strong id="totalCount">0</strong></div>
+      <div class="stat"><span>در انتظار</span><strong id="activeCount">0</strong></div>
+      <div class="stat"><span>انجام‌شده</span><strong id="completedCount">0</strong></div>
+    </section>
+
+    <section class="panel">
+      <form id="taskForm" class="task-form">
+        <input id="taskInput" type="text" maxlength="120" placeholder="مثلاً: مطالعه فصل اول..." autocomplete="off" required>
+        <select id="priority" aria-label="اولویت">
+          <option value="normal">عادی</option>
+          <option value="high">مهم</option>
+          <option value="low">کم</option>
+        </select>
+        <button type="submit" class="add-btn">+ افزودن</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters">
+          <button class="filter active" data-filter="all">همه</button>
+          <button class="filter" data-filter="active">در انتظار</button>
+          <button class="filter" data-filter="completed">انجام‌شده</button>
+        </div>
+        <label class="search">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="جست‌وجو...">
+        </label>
+      </div>
+
+      <div id="taskList" class="task-list"></div>
+      <div id="emptyState" class="empty-state">
+        <div>✓</div>
+        <h3>هنوز کاری نداری!</h3>
+        <p>اولین کار خودت را اضافه کن و شروع کن.</p>
+      </div>
+
+      <div class="footer-actions">
+        <button id="clearCompleted" class="danger-btn">حذف کارهای انجام‌شده</button>
+        <span id="remainingText">0 کار باقی مانده</span>
+      </div>
+    </section>
+
+    <footer>ساخته‌شده با ❤️ و JavaScript — آماده برای GitHub Pages</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
